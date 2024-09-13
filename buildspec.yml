@@ -4,7 +4,7 @@ env:
   parameter-store:
     DOCKERURL: /learn/learn/dockerurl
     DOCKERUSERNAME: /learn/learn/docker/username
-    DOCKERPASSWORD: /learn/learn/dockerurl  
+    DOCKERPASSWORD: /learn/learn/docker/password  
 phases:
   install:
     runtime-versions:
