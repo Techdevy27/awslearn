@@ -25,7 +25,7 @@ phases:
       - docker --version
       - echo "$DOCKERPASSWORD" | docker login -u $DOCKERUSERNAME --password-stdin
       - docker build -t learn:latest .
-      - docker push learn:latest 
+      - docker push "$DOCKERUSERNAME"/learn:latest 
     
   post_build:
     commands:
