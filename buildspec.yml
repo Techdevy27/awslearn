@@ -27,7 +27,7 @@ phases:
       - docker build -t learn:latest .
       - docker images
       - 
-      - docker push $DOCKERUSERNAME/learn:latest 
+      - docker push learn:latest 
     
   post_build:
     commands:
