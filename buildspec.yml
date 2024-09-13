@@ -21,7 +21,7 @@ phases:
   build:
     commands:
       - echo " building the docker image"
-      - sudo yum install docker.io -y
+#      - sudo yum install docker.io -y
       - docker --version
       - echo "$DOCKERPASSWORD" | docker login -u $ DOCKERUSERNAME --password-stdin "$DOCKERPASSWORD"
       - docker build -t learn:latest
