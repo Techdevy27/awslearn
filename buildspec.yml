@@ -1,0 +1,32 @@
+version: 0.2
+
+env:
+  parameter-store:
+    DOCKERURL: /learn/learn/dockerurl
+    DOCKERUSERNAME: /learn/learn/docker/username
+    DOCKERPASSWORD: /learn/learn/dockerurl  
+phases:
+  install:
+    runtime-versions:
+      python: 3.12
+    commands:
+      - echo " Starting the build - stage 1"   
+  pre_build:
+    commands:
+      - echo " pre buid phase, installing prerequisites and dependency"
+      - yum install updates -y
+      - pip install simple-python-app/requirements.txt
+    
+  build:
+    commands:
+      - echo " building the docker image"
+      - cd simple-python-app
+      - sudo yum install docker.io -y
+      - docker --version
+      - echo "$DOCKERPASSWORD" | docker login -u $ DOCKERUSERNAME --password-stdin "$DOCKERPASSWORD"
+      - docker build -t learn:latest
+      - docker push learn:latest 
+    
+  post_build:
+    commands:
+      - echo " build is successful"
