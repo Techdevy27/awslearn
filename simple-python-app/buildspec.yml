@@ -14,6 +14,7 @@ phases:
   pre_build:
     commands:
       - echo " pre buid phase, installing prerequisites and dependency"
+      - yum install updates -y
       - pip install simple-python-app/requirements.txt
     
   build:
