@@ -21,7 +21,6 @@ phases:
   build:
     commands:
       - echo " building the docker image"
-      - cd simple-python-app
       - sudo yum install docker.io -y
       - docker --version
       - echo "$DOCKERPASSWORD" | docker login -u $ DOCKERUSERNAME --password-stdin "$DOCKERPASSWORD"
