@@ -24,10 +24,9 @@ phases:
 #      - sudo yum install docker.io -y
       - docker --version
       - echo "$DOCKERPASSWORD" | docker login -u $DOCKERUSERNAME --password-stdin
-      - docker build -t learn:latest .
-      - docker images
-      - 
-      - docker push learn:latest 
+      - docker build -t $DOCKERUSERNAME/learn .
+      - docker images 
+      - docker push $DOCKERUSERNAME/learn 
     
   post_build:
     commands:
