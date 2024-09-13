@@ -1,7 +1,5 @@
 version: 0.2
 
-run-as: root
-
 env:
   parameter-store:
     DOCKERURL: /learn/learn/dockerurl
@@ -9,7 +7,6 @@ env:
     DOCKERPASSWORD: /learn/learn/dockerurl  
 phases:
   install:
-    run-as: root
     runtime-versions:
       python: 3.12
     commands:
